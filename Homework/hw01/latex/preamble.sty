@@ -1,0 +1,164 @@
+\ProvidesPackage{preamble}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+% \usepackage[main=english,greek,russian]{babel}
+% \usepackage{bbold}
+\usepackage{blindtext}
+\usepackage{bm}
+% \usepackage{bbm}
+\usepackage{caption}
+\usepackage{changepage}
+% \usepackage{chemfig}
+\usepackage{chngcntr}
+\usepackage{color}
+\usepackage{commath}
+\usepackage{cuted}
+% \usepackage{dsfont}
+\usepackage{esint}
+\usepackage{etoolbox}
+\usepackage{fancyhdr}
+\usepackage{fancyref}
+\usepackage{float}
+% \usepackage{fontspec}
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage{hyperref}
+\usepackage{lipsum}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{multirow}
+\usepackage{parskip}
+\usepackage{physics}
+\usepackage{pifont}
+\usepackage{rotating}
+\usepackage{sectsty}
+\usepackage{setspace}
+\usepackage{showexpl}
+\usepackage{subcaption}
+\usepackage{tensor}
+
+\geometry{
+    top=3cm,
+	bottom=2cm,
+	left=3cm,
+	right=3cm
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+
+%FONTS
+% \babelfont[english]{rm}{FreeSerif}
+% \babelfont[greek]{rm}{FreeSerif}
+% \babelfont[russian]{rm}{FreeSerif}
+
+%LANGUAGES
+% \setdefaultlanguage{english}
+% \setotherlanguages{greek,french,spanish}
+
+\newcommand{\cmark}{\text{\ding{51}}}
+\newcommand{\xmark}{\text{\ding{55}}}
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.9,0.9,0.9}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+
+\renewcommand{\ttdefault}{pcr}
+\lstset{
+	backgroundcolor=\color{mygray},		% choose the background color; you must add \usepackage{color} or \usepackage{xcolor}; should come as last argument
+	basicstyle=\ttfamily,				% the size of the fonts that are used for the code
+	breakatwhitespace=false,			% sets if automatic breaks should only happen at whitespace
+	breaklines=true,					% sets automatic line breaking
+	captionpos=b,						% sets the caption-position to bottom
+	commentstyle=\color{mymauve},		% comment style
+	deletekeywords={...},				% if you want to delete keywords from the given language
+	escapeinside={\%*}{*)},				% if you want to add LaTeX within your code
+	extendedchars=true,					% lets you use non-ASCII characters; for 8-bits encodings only, does not work with UTF-8
+	firstnumber=1,						% start line enumeration with line 1000
+	frame=,								% adds a frame around the code
+	framexleftmargin=2em,
+	keepspaces=true,					% keeps spaces in text, useful for keeping indentation of code (possibly needs columns=flexible)
+	keywordstyle=\ttfamily\bfseries,	% keyword style
+	language=,							% the language of the code
+	morekeywords={*,...},				% if you want to add more keywords to the set
+	numbers=left,						% where to put the line-numbers; possible values are (none, left, right)
+	numbersep=5pt,						% how far the line-numbers are from the code
+	numberstyle=\ttfamily,				% the style that is used for the line-numbers
+	rulecolor=\color{black},			% if not set, the frame-color may be changed on line-breaks within not-black text (e.g. comments (green here))
+	showspaces=false,					% show spaces everywhere adding particular underscores; it overrides 'showstringspaces'
+	showstringspaces=false,				% underline spaces within strings only
+	showtabs=false,						% show tabs within strings adding particular underscores
+	stepnumber=1,						% the step between two line-numbers. If it's 1, each line will be numbered
+	stringstyle=\color{mymauve},		% string literal style
+	tabsize=4,							% sets default tabsize to 2 spaces
+	title=\lstname,						% show the filename of files included with \lstinputlisting; also try caption instead of title
+	xleftmargin=7em,
+	xrightmargin=5em,
+}
+
+
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage[
+backend=biber,
+style=phys,
+articletitle=true,
+biblabel=superscript,
+chaptertitle=true,
+pageranges=true,
+sorting=none,
+autocite=superscript,
+natbib=true
+]{biblatex}
+\addbibresource{refs.bib}
+
+%Hyperlink Setup
+\hypersetup{
+	colorlinks,
+	linkcolor=blue,
+	urlcolor=red,
+	citecolor=blue
+}
+
+% \makeatother
+
+\sectionfont{\fontsize{18}{15}\selectfont}
+
+\subsectionfont{\fontsize{15}{15}\selectfont}
+
+\counterwithin{equation}{subsection}
+\counterwithin{figure}{subsection}
+\counterwithin{table}{subsection}
+\setcounter{secnumdepth}{3}
+\setlength{\parskip}{0pt}
+\setlength{\parindent}{1cm}
+%\linespread{1}
+
+\newcounter{example}[subsection]
+\newenvironment{example}
+{\begin{adjustwidth}{1cm}{1cm}
+		\refstepcounter{example}\par\medskip
+		\noindent\textbf{Example \arabic{section}.\arabic{subsection}.\theexample}
+	}
+	{\end{adjustwidth}
+}
+
+
+\newenvironment{theorem}[1]
+{\noindent\textbf{#1}
+	\begin{adjustwidth}{2cm}{2cm}
+		\em
+	}{\end{adjustwidth}}
+\newenvironment{proof}
+{\noindent\textbf{Proof}
+	\begin{adjustwidth}{2cm}{2cm}
+	}
+	{
+
+		\hfill
+		\textbf{QED}
+	\end{adjustwidth}
+}
+
+
+\endinput
