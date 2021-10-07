@@ -1,0 +1,168 @@
+\documentclass[a4paper,12pt,twoside]{article}
+
+\usepackage{preamble}
+
+\title{Homework 02}
+\author{Brandon Henke\\PHY851\\Scott Pratt}
+\date{September 20, 2021}
+
+\setcounter{section}{1}
+
+\fancyhead[LE,RO]{B. Henke}
+\fancyhead[RE,LO]{\thepage}
+
+\begin{document}
+%\tableofcontents
+
+\maketitle
+\begin{multicols*}{2}
+
+\setcounter{subsection}{9}
+\subsection{}%10
+\subsubsection{}
+\begin{align}
+	\ket{45} &= \frac{1}{\sqrt{2}} \left( \ket{R} + i\ket{L} \right),\\
+	\ket{135} &= \frac{1}{\sqrt{2}} \left( -\ket{R} + i\ket{L} \right).
+\end{align}
+\subsubsection{}
+\begin{align}
+	\frac{e^{-i\pi/4}}{2} \begin{pmatrix}
+		\frac{1}{\sqrt{2}} & -\frac{i}{\sqrt{2}} \\
+		\frac{1}{\sqrt{2}} & \frac{i}{\sqrt{2}} \\
+	\end{pmatrix}&
+	\begin{pmatrix}
+		\frac{1}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+		\frac{1}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+	\end{pmatrix}\nonumber\\
+	&=
+	\begin{pmatrix}
+		-\frac{i}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+		\frac{1}{\sqrt{2}} & \frac{i}{\sqrt{2}}
+	\end{pmatrix}
+\end{align}
+The factor of $e^{-i\pi/4}$ is there to rotate the state into a nicer (but identical) form, since relative phase is all that matters.
+\subsubsection{}
+For a unitary transformation, the adjoint is equal to the inverse.
+\begin{align}
+	\begin{pmatrix}
+		-\frac{i}{\sqrt{2}} & -\frac{1}{\sqrt{2}} \\
+		\frac{1}{\sqrt{2}} & \frac{i}{\sqrt{2}}
+	\end{pmatrix}&
+	\begin{pmatrix}
+		\frac{i}{\sqrt{2}} & \frac{1}{\sqrt{2}} \\
+		-\frac{1}{\sqrt{2}} & -\frac{i}{\sqrt{2}}
+	\end{pmatrix}\nonumber\\
+	&= \begin{pmatrix}
+		1 & 0 \\
+		0 & 1
+	\end{pmatrix}.
+\end{align}
+Since it has been shown that the adjoint is the transformation's inverse, the transformation is unitary.
+\subsection{}%11
+\subsubsection{}
+\begin{equation}
+	P_x = \op{X} = \begin{pmatrix}
+		1 & 0 \\
+		0 & 0
+	\end{pmatrix}.
+\end{equation}
+\subsubsection{}
+The eigenvalues of $P_x$ are
+\begin{equation}
+	\lambda = 1,0.
+\end{equation}
+The eigenstates are
+\begin{equation}
+	\ket{\lambda} = \ket{X},\ket{Y},
+\end{equation}
+respectively.
+\subsubsection{}
+In the $RL$ basis, $P_x$ is given by
+\begin{equation}
+	P_x = \frac{1}{2} \begin{pmatrix}
+		1 & 1 \\ 1 & 1
+	\end{pmatrix} = \frac{1}{2}(\mathbb{1}+\sigma_1).
+\end{equation}
+From this, it's easy to see that the eigenvalues are, again,
+\begin{equation}
+	\lambda = 1,0.
+\end{equation}
+
+\subsection{}%12
+\subsubsection{}
+\begin{align}
+	\Tr(U^\dagger A U) &= U^*_{ij}A_{jk}U_{ki},\\
+	&= U^*_{ij}U_{ki}A_{jk},\\
+	&= \delta_{jk} A_{jk},\\
+	&= A_{jj} = \Tr(A).
+\end{align}
+\subsubsection{}
+\begin{align}
+	\Tr(AB) &= A_{ij}B_{ji},\\
+	&= B_{ji}A_{ij},\\
+	&= \Tr(BA).
+\end{align}
+\subsection{}%13
+Let $\phi(z,t)$ be the operator
+\begin{equation}
+	\phi(z,t) = e^{-i\omega t} \begin{pmatrix}
+		e^{ik_x z} & 0 \\
+		0 & e^{-ik_y z}
+	\end{pmatrix},
+\end{equation}
+where $z$ is the distance into the crystal.
+Then
+\begin{align}
+	\phi(z,t)\ket{\psi} &= \frac{1}{\sqrt{2}} e^{-i\omega t} \begin{pmatrix}
+		e^{ik_x z}\\ e^{ik_y z}
+	\end{pmatrix},\\
+	&= \frac{1}{\sqrt{2}} \begin{pmatrix}
+		1\\ e^{i(k_y-k_x) z}
+	\end{pmatrix}
+\end{align}
+is the polarization of the photon at a distance $z$ inside the crystal.
+If the photon comes out as righthand circularly polarized, then
+\begin{equation}
+	e^{i(k_y-k_x)z} = i,
+\end{equation}
+or
+\begin{equation}
+	(k_y-k_x)z = \frac{\pi}{2}.
+\end{equation}
+Thus
+\begin{equation}
+	z = \frac{c}{4\abs{n_y-n_x} \nu} =
+\end{equation}
+\subsection{}%14
+\subsection{}%15
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+
+\setcounter{subsection}{16}
+\subsection{}%17
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsubsection{}
+\subsection{}%18
+
+\setcounter{section}{2}
+\setcounter{subsection}{0}
+\subsection{}%1
+\subsection{}%2
+\subsection{}%3
+
+\citation
+\bibdata
+\bibstyle
+
+
+
+% \nocite{*}
+% \printbibliography[title={References},heading=bibnumbered]
+
+
+\end{multicols*}
+\end{document}
