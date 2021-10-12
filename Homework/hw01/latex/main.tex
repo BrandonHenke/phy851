@@ -15,216 +15,216 @@
 %\tableofcontents
 
 \maketitle
-\begin{multicols*}{2}
+% \begin{multicols*}{2}
 
 
 \subsection{}%1
 \subsubsection*{a}
 \begin{align}
-    R(\phi) &= \begin{pmatrix}
-        cos(\phi) & -\sin(\phi)\\
-        \sin(\phi) & \cos(\phi)
-    \end{pmatrix},
-    \label{eq: rotationMat}\\
-    R\left(\frac{\pi}{4}\right) &= \frac{1}{\sqrt{2}}\begin{pmatrix}
-        1 & 1 \\ -1 & 1
-    \end{pmatrix}.
+	R(\phi) &= \begin{pmatrix}
+		cos(\phi) & -\sin(\phi)\\
+		\sin(\phi) & \cos(\phi)
+	\end{pmatrix},
+	\label{eq: rotationMat}\\
+	R\left(\frac{\pi}{4}\right) &= \frac{1}{\sqrt{2}}\begin{pmatrix}
+		1 & 1 \\ -1 & 1
+	\end{pmatrix}.
 \end{align}
 \subsubsection*{b}
 See equation (\ref{eq: rotationMat}).
 \subsubsection*{c}
 Right circularly polarized light is given by
 \begin{equation}
-    \ket{R} = \frac{1}{\sqrt{2}}\left( \ket{x}+i\ket{y} \right).
+	\ket{R} = \frac{1}{\sqrt{2}}\left( \ket{x}+i\ket{y} \right).
 \end{equation}
 \begin{equation}
-    \phi(z,t) = \frac{1}{\sqrt{2}}e^{-i\omega t}\begin{pmatrix}
-    e^{i k_x z} \\ e^{i k_y z}
-    \end{pmatrix}.
+	\phi(z,t) = \frac{1}{\sqrt{2}}e^{-i\omega t}\begin{pmatrix}
+	e^{i k_x z} \\ e^{i k_y z}
+	\end{pmatrix}.
 \end{equation}
 Thus,
 \begin{equation}
-    \ket{\psi} = \frac{1}{\sqrt{2}} \left( \ket{x} - i e^{i(k_x-k_y)Z}\ket{y} \right).
+	\ket{\psi} = \frac{1}{\sqrt{2}} \left( \ket{x} - i e^{i(k_x-k_y)Z}\ket{y} \right).
 \end{equation}
 \subsubsection*{d}
 \begin{align}
-    \rho_{\ket{R}} &= \op{R},\\
-    &= \frac{1}{2} \left( \ket{x} + i\ket{y} \right)\left( \bra{x} - i\bra{y} \right),\\
-    &= \frac{1}{2} \left( \mathbb{1} + \sigma_2 \right).
+	\rho_{\ket{R}} &= \op{R},\\
+	&= \frac{1}{2} \left( \ket{x} + i\ket{y} \right)\left( \bra{x} - i\bra{y} \right),\\
+	&= \frac{1}{2} \left( \hat{1} + \sigma_2 \right).
 \end{align}
 \subsubsection*{e}
 \begin{equation}
-    \rho_\psi = \frac{1}{2} \op{x} + \frac{1}{2} \op{y}.
+	\rho_\psi = \frac{1}{2} \op{x} + \frac{1}{2} \op{y}.
 \end{equation}
 \subsection{}%2
 \begin{align}
-    \ev{R(\theta)}{x} &= \ev{(\cos\theta-i\sin\theta)}{x},\\
-    &= \cos\theta - i\sin\theta\ev{\sigma_2}{x},\\
-    &= \cos\theta.
+	\ev{R(\theta)}{x} &= \ev{(\cos\theta-i\sin\theta)}{x},\\
+	&= \cos\theta - i\sin\theta\ev{\sigma_2}{x},\\
+	&= \cos\theta.
 \end{align}
 \begin{align}
-    \ev{R\left(\frac{\pi}{2}\right)}{x} &= 0,\\
-    \ev{R\left(\pi\right)}{x} &= -1,\\
-    \ev{R\left(2\pi\right)}{x} &= 1.
+	\ev{R\left(\frac{\pi}{2}\right)}{x} &= 0,\\
+	\ev{R\left(\pi\right)}{x} &= -1,\\
+	\ev{R\left(2\pi\right)}{x} &= 1.
 \end{align}
 \subsection{}%3
 \begin{align}
-    &\ev{R_y(\theta)}{z,+}\\ &= \ev{\left(\cos\frac{\theta}{2}+i\sin\frac{\theta}{2}\right)}{z,+},\\
-    &= \cos\frac{\theta}{2} + i\sin\frac{\theta}{2}\ev{\sigma_2}{z,+},\\
-    &= \cos\frac{\theta}{2}.
+	&\ev{R_y(\theta)}{z,+}\\ &= \ev{\left(\cos\frac{\theta}{2}+i\sin\frac{\theta}{2}\right)}{z,+},\\
+	&= \cos\frac{\theta}{2} + i\sin\frac{\theta}{2}\ev{\sigma_2}{z,+},\\
+	&= \cos\frac{\theta}{2}.
 \end{align}
 \begin{align}
-    \ev{R_y\left(\frac{\pi}{2}\right)}{z,+} &= \frac{1}{\sqrt{2}},\\
-    \ev{R_y\left(\pi\right)}{z,+} &= 0,\\
-    \ev{R_y\left(2\pi\right)}{z,+} &= -1.
+	\ev{R_y\left(\frac{\pi}{2}\right)}{z,+} &= \frac{1}{\sqrt{2}},\\
+	\ev{R_y\left(\pi\right)}{z,+} &= 0,\\
+	\ev{R_y\left(2\pi\right)}{z,+} &= -1.
 \end{align}
 \subsection{}%4
 Let $U$ bet a unitary transformation.
 Then
 \[
-    UU^\dagger = U^\dagger U = \mathbb{1}.
+	UU^\dagger = U^\dagger U = \hat{1}.
 \]
 Hence,
 \[
-    U^\dagger \mathbb{1} U = U^\dagger U \mathbb{1} = \mathbb{11} = \mathbb{1}.
+	U^\dagger \hat{1} U = U^\dagger U \hat{1} = \mathbb{11} = \hat{1}.
 \]
 \subsection{}%5
 \begin{equation}
-    U^\dagger = \frac{1}{\sqrt{2}} (\mathbb{1}+i\sigma_3).
+	U^\dagger = \frac{1}{\sqrt{2}} (\hat{1}+i\sigma_3).
 \end{equation}
 \subsubsection*{a}
 \begin{align}
-    U\sigma_1U^\dagger &= \frac{1}{2}(\mathbb{1}-i\sigma_3)\sigma_1(\mathbb{1}+i\sigma_3),\\
-    &= \frac{1}{2}(\sigma_1 - i\sigma_3\sigma_1)(\mathbb{1}+i\sigma_3),\\
-    &= \frac{1}{2}(\sigma_1+i[\sigma_1,\sigma_3] - \sigma_1),\\
-    &= \frac{1}{2} i (-2i\sigma_2),\\
-    &= \sigma_2.
+	U\sigma_1U^\dagger &= \frac{1}{2}(\hat{1}-i\sigma_3)\sigma_1(\hat{1}+i\sigma_3),\\
+	&= \frac{1}{2}(\sigma_1 - i\sigma_3\sigma_1)(\hat{1}+i\sigma_3),\\
+	&= \frac{1}{2}(\sigma_1+i[\sigma_1,\sigma_3] - \sigma_1),\\
+	&= \frac{1}{2} i (-2i\sigma_2),\\
+	&= \sigma_2.
 \end{align}
 \subsubsection*{b}
 \begin{align}
-    U\ket{x,+} &= \frac{1}{2}(\mathbb{1}+i\sigma_3)(\ket{\uparrow}+\ket{\downarrow}),\\
-    &= \frac{1}{2}(\ket{\uparrow}+\ket{\downarrow}-i\ket{\uparrow}+i\ket{\downarrow}),\\
-    &= \frac{1}{\sqrt{2}}(\ket{\uparrow}+i\ket{\downarrow}).
-    \label{eq: y eigenvec}
+	U\ket{x,+} &= \frac{1}{2}(\hat{1}+i\sigma_3)(\ket{\uparrow}+\ket{\downarrow}),\\
+	&= \frac{1}{2}(\ket{\uparrow}+\ket{\downarrow}-i\ket{\uparrow}+i\ket{\downarrow}),\\
+	&= \frac{1}{\sqrt{2}}(\ket{\uparrow}+i\ket{\downarrow}).
+	\label{eq: y eigenvec}
 \end{align}
 This expression (\ref{eq: y eigenvec}) is an eigenstate of $\sigma_2$.
 \subsection{}%6
 \begin{equation}
-    U^\dagger = v_i^{(j)}.
+	U^\dagger = v_i^{(j)}.
 \end{equation}
 \subsubsection*{a}
 \begin{align}
-    UU^\dagger &= v_j^{*(i)}v_i^{(j)},\\
-    &= \left\{\begin{array}{lr}
-        1, & i=j \\
-        0, & i\neq j
-    \end{array}\right.,\\
-    &= \mathbb{1}.
+	UU^\dagger &= v_j^{*(i)}v_i^{(j)},\\
+	&= \left\{\begin{array}{lr}
+		1, & i=j \\
+		0, & i\neq j
+	\end{array}\right.,\\
+	&= \hat{1}.
 \end{align}
 \subsubsection*{b}
 \begin{align}
-    U_{ij} v_i^{(n)} &= v_j^{*(i)}v_i^{(n)},\\
-    &= \delta_{nj}\qq{(ortho.)}\\
-    K' = UKU^\dagger:&\\
-    K'U v^{(n)} &= UKU^\dagger U v^{(n)},\\
-    &= UK v^{(n)},\\
-    &= \lambda_n \left(Uv^{(n)}\right).
+	U_{ij} v_i^{(n)} &= v_j^{*(i)}v_i^{(n)},\\
+	&= \delta_{nj}\qq{(ortho.)}\\
+	K' = UKU^\dagger:&\\
+	K'U v^{(n)} &= UKU^\dagger U v^{(n)},\\
+	&= UK v^{(n)},\\
+	&= \lambda_n \left(Uv^{(n)}\right).
 \end{align}
 \subsection{}%7
 \begin{equation}
-    M = \begin{pmatrix}
-     1 & 0 & 0 \\
-     0 & 0 & 1 \\
-     0 & 1 & 0 \\
-    \end{pmatrix}.
+	M = \begin{pmatrix}
+	 1 & 0 & 0 \\
+	 0 & 0 & 1 \\
+	 0 & 1 & 0 \\
+	\end{pmatrix}.
 \end{equation}
 \subsubsection*{a}
 \begin{align}
-    \left| \begin{matrix}
-     \lambda-1 & 0 & 0 \\
-     0 & \lambda & -1 \\
-     0 & -1 & \lambda
-    \end{matrix}\right|\!\!\!\!\!\!\!\!\!\!\!\!&\nonumber\\
-    &= (\lambda-1)(\lambda^2-1) = 0,\\
-    \lambda &= 1,\pm i.
+	\left| \begin{matrix}
+	 \lambda-1 & 0 & 0 \\
+	 0 & \lambda & -1 \\
+	 0 & -1 & \lambda
+	\end{matrix}\right|\!\!\!\!\!\!\!\!\!\!\!\!&\nonumber\\
+	&= (\lambda-1)(\lambda^2-1) = 0,\\
+	\lambda &= 1,\pm i.
 \end{align}
 \subsubsection*{b}
 \begin{align}
-    \begin{pmatrix}
-     \lambda-1 & 0 & 0 \\
-     0 & \lambda & -1 \\
-     0 & -1 & \lambda
-    \end{pmatrix}&
-    \begin{pmatrix}
-        a \\ b \\ c
-    \end{pmatrix}
-    = \begin{pmatrix}
-        0 \\ 0 \\ 0
-    \end{pmatrix}.\\
-    a &= 0,\\
-    c &= b\lambda.\\
-    v_1 &= \frac{1}{\sqrt{2}}\begin{pmatrix}
-        0 \\ 1 \\ 1
-    \end{pmatrix},\\
-    v_i &= \frac{1}{\sqrt{2}}\begin{pmatrix}
-        0 \\ 1 \\ i
-    \end{pmatrix},\\
-    v_{-i} &= \frac{1}{\sqrt{2}}\begin{pmatrix}
-        0 \\ 1 \\ -i
-    \end{pmatrix}.
+	\begin{pmatrix}
+	 \lambda-1 & 0 & 0 \\
+	 0 & \lambda & -1 \\
+	 0 & -1 & \lambda
+	\end{pmatrix}&
+	\begin{pmatrix}
+		a \\ b \\ c
+	\end{pmatrix}
+	= \begin{pmatrix}
+		0 \\ 0 \\ 0
+	\end{pmatrix}.\\
+	a &= 0,\\
+	c &= b\lambda.\\
+	v_1 &= \frac{1}{\sqrt{2}}\begin{pmatrix}
+		0 \\ 1 \\ 1
+	\end{pmatrix},\\
+	v_i &= \frac{1}{\sqrt{2}}\begin{pmatrix}
+		0 \\ 1 \\ i
+	\end{pmatrix},\\
+	v_{-i} &= \frac{1}{\sqrt{2}}\begin{pmatrix}
+		0 \\ 1 \\ -i
+	\end{pmatrix}.
 \end{align}
 \subsection{}%8
 \begin{equation}
-    K = \begin{pmatrix}
-        A & C^* \\
-        C & B
-    \end{pmatrix}.
+	K = \begin{pmatrix}
+		A & C^* \\
+		C & B
+	\end{pmatrix}.
 \end{equation}
 \subsubsection*{a}
 \begin{align}
-    & (\lambda - A)(\lambda-B)-C^*C = 0,\\
-    & \lambda_\pm = \frac{A+B \pm \sqrt{(A^2-B^2)+4C^*C}}{2}.
+	& (\lambda - A)(\lambda-B)-C^*C = 0,\\
+	& \lambda_\pm = \frac{A+B \pm \sqrt{(A^2-B^2)+4C^*C}}{2}.
 \end{align}
 \subsubsection*{b}
 \begin{align}
-    \begin{pmatrix}
-        \lambda-A & -C^* \\
-        -C & \lambda-B
-    \end{pmatrix}
-    & \begin{pmatrix}
-        a \\ b
-    \end{pmatrix}
-    = \begin{pmatrix}
-        0 \\ 0
-    \end{pmatrix},\\
-    a(\lambda-A) - bC^* &= 0,\\
-    -aC+b(\lambda-B) &=0,\\
-    a &= b \sqrt{\frac{C^*(\lambda-B)}{C(\lambda-A}},
+	\begin{pmatrix}
+		\lambda-A & -C^* \\
+		-C & \lambda-B
+	\end{pmatrix}
+	& \begin{pmatrix}
+		a \\ b
+	\end{pmatrix}
+	= \begin{pmatrix}
+		0 \\ 0
+	\end{pmatrix},\\
+	a(\lambda-A) - bC^* &= 0,\\
+	-aC+b(\lambda-B) &=0,\\
+	a &= b \sqrt{\frac{C^*(\lambda-B)}{C(\lambda-A)}},
 \end{align}
 \begin{equation}
-    v_\pm = \frac{1}{\sqrt{\frac{C^*(\lambda-B)}{C(\lambda-A}-1}}\begin{pmatrix}
-            \sqrt{\frac{C^*(\lambda-B)}{C(\lambda-A}},\\
-            1
-        \end{pmatrix}
+	v_\pm = \frac{1}{\sqrt{\frac{C^*(\lambda-B)}{C(\lambda-A}-1}}\begin{pmatrix}
+		\sqrt{\frac{C^*(\lambda-B)}{C(\lambda-A}},\\
+		1
+	\end{pmatrix}
 \end{equation}
 \subsection{}%9
 \begin{equation}
-    \ket{\psi} = \frac{1}{2} (\sqrt{3} \ket{x} + \ket{y}).
+	\ket{\psi} = \frac{1}{2} (\sqrt{3} \ket{x} + \ket{y}).
 \end{equation}
 \begin{align}
-    \ev{(E-\ev{E})^2}^{1/2} &= \sqrt{Np(1-p)},\\
-    p &= \abs{\ip{x}{y}}^2 = \frac{3}{4},\\
-    \ev{(E-\ev{E})^2}^{1/2} &= \frac{\sqrt{3N}}{4}.\\
-    \ev{E} &= Np,\\
-    &= \frac{3N}{4}.\\
-    N &= \frac{10\mathrm{J}}{h\nu} \approx 3.32 \cdot 10^{19},\\
-    \frac{\ev{(E-\ev{E})^2}^{1/2}}{\ev{E}} &= \frac{1}{\sqrt{3N}},\\
-    &\approx 1.00 \cdot 10^{-10}\mathrm{J^{-1/2}}.
+	\ev{(E-\ev{E})^2}^{1/2} &= \sqrt{Np(1-p)},\\
+	p &= \abs{\ip{x}{y}}^2 = \frac{3}{4},\\
+	\ev{(E-\ev{E})^2}^{1/2} &= \frac{\sqrt{3N}}{4}.\\
+	\ev{E} &= Np,\\
+	&= \frac{3N}{4}.\\
+	N &= \frac{10\mathrm{J}}{h\nu} \approx 3.32 \cdot 10^{19},\\
+	\frac{\ev{(E-\ev{E})^2}^{1/2}}{\ev{E}} &= \frac{1}{\sqrt{3N}},\\
+	&\approx 1.00 \cdot 10^{-10}\mathrm{J^{-1/2}}.
 \end{align}
 
-\nocite{*}
-\printbibliography[title={References},heading=bibnumbered]
+% \nocite{*}
+% \printbibliography[title={References},heading=bibnumbered]
 
 
-\end{multicols*}
+% \end{multicols*}
 \end{document}

@@ -1,0 +1,157 @@
+\documentclass[a4paper,12pt,twoside]{article}
+
+\usepackage{preamble}
+
+\title{Homework 05}
+\author{Brandon Henke\\PHY851\\Scott Pratt}
+\date{September 20, 2021}
+
+\setcounter{section}{3}
+
+\fancyhead[LE,RO]{B. Henke}
+\fancyhead[RE,LO]{\thepage}
+
+\begin{document}
+%\tableofcontents
+
+\maketitle
+% \begin{multicols*}{2}
+
+\setcounter{subsection}{4}
+\subsection{}%3.5
+\begin{align}
+	\vb{B} &= B\vu{z},\\
+	\vb{E} &= 0, \qq{and}\\
+	\vb{A} &= Bx\vu{y}.
+\end{align}
+For $\vb{E} = 0$ one can assume $A_0 = \Phi = 0$.
+Boosting at $v_y$ in the $\vu{y}$ direction gives
+\begin{align}
+	A_0' &= \gamma\left(A_0 - \bm{\beta}\vdot\vb{A}\right),\\
+	&= - \gamma v_y B x.
+\end{align}
+For nonrelativistic velocities, $\gamma \approx 1$, so,
+\begin{equation}
+	A_0' = -v_y Bx.
+\end{equation}
+Thus
+\begin{equation}
+	\vb{E}' = -\grad{A_0'} = v_y B \vu{x}.
+\end{equation}
+
+\setcounter{section}{4}
+\setcounter{subsection}{0}
+\subsection{}%4.1
+The angular momentum operator for the $\vu{z}$ axis is given by
+\begin{equation}
+	\hat{L}_3 = \hat{r}_1\hat{p}_2-\hat{r}_2 \hat{p}_1.
+\end{equation}
+From this, the commutator with $\hat{r}^2$ is
+\begin{align}
+	\comm{\hat{r}^2}{\hat{L}_3}
+	&= \hat{r}_1\hat{r}^2\hat{p}_2 - \hat{r}_2\hat{r}^2\hat{p}_1 - \hat{r}_1\hat{p}_2\hat{r}^2 + \hat{r}_2\hat{p}_1\hat{r}^2,\\
+	&= \hat{r}_1\comm{\hat{r}^2}{\hat{p}_2}-\hat{r}_2\comm{\hat{r}^2}{\hat{p}_1},\\
+	&= i\hbar \hat{r}_1\hat{r}_2 - i\hbar\hat{r}_1\hat{r}_2,\\
+	&= 0.
+\end{align}
+Hence, the two operators commute.
+
+\subsection{}%4.2
+Let $i = \sigma_{123} = \sigma_1\sigma_2\sigma_3$, and
+\begin{align}
+	\alpha &= \sum_{n=1}^3 \alpha_n\sigma_n,\\
+	\beta &= \sum_{n=1}^3 \beta_n\sigma_n, \qq{and}\\
+	\gamma &= \sum_{n=1}^3 \gamma_n\sigma_n.
+\end{align}
+Then
+\begin{align}
+	e^{i\alpha/2}e^{i\beta/2} &= \left(\cos(\frac{\abs{\alpha}}{2}) + i\sin(\frac{\abs{\alpha}}{2})\frac{\alpha}{\abs{\alpha}}\right)
+	\left(\cos(\frac{\abs{\beta}}{2}) + i\sin(\frac{\abs{\beta}}{2})\frac{\beta}{\abs{\beta}}\right),\\
+	&= \cos(\frac{\abs{\alpha}}{2})\cos(\frac{\abs{\beta}}{2})
+	- \frac{\alpha\beta}{\abs{\alpha}\abs{\beta}} \sin(\frac{\alpha}{2})\sin(\frac{\abs{\beta}}{2})\\
+	&+ i\left(\frac{\alpha}{\abs{\alpha}} \sin(\frac{\abs{\alpha}}{2}) \cos(\frac{\abs{\beta}}{2})
+	+ \frac{\beta}{\abs{\beta}} \sin(\frac{\abs{\alpha}}{2}) \cos(\frac{\abs{\beta}}{2})\right).
+\end{align}
+By definition of the geometric product, $\alpha\beta = \alpha\cdot\beta + i(\alpha\cross\beta)$.
+Thus
+\begin{align}
+	e^{i\alpha/2}e^{i\beta/2}
+	&= \cos(\frac{\abs{\alpha}}{2})\cos(\frac{\abs{\beta}}{2})-\frac{\alpha\cdot\beta}{\abs{\alpha}\abs{\beta}} \sin(\frac{\alpha}{2})\sin(\frac{\abs{\beta}}{2})\nonumber\\
+	&+ i\left[ \frac{\alpha}{\abs{\alpha}} \sin(\frac{\abs{\alpha}}{2}) \cos(\frac{\abs{\beta}}{2})
+	+ \frac{\beta}{\abs{\beta}} \sin(\frac{\abs{\alpha}}{2}) \cos(\frac{\abs{\beta}}{2}) \right.\nonumber\\
+	&+ \left. \frac{\alpha \cross \beta}{\abs{\alpha}\abs{\beta}} \sin(\frac{\alpha}{2})\sin(\frac{\abs{\beta}}{2})\right]
+\end{align}
+If one expands $e^{i\gamma/2}$ in the same way and equates the scalar and bivector parts, then one gets the desired relationships:
+\begin{align}
+	\cos(\frac{\abs{\gamma}}{2}) &= \cos(\frac{\abs{\alpha}}{2})\cos(\frac{\abs{\beta}}{2})
+	- \sin(\frac{\abs{\alpha}}{2})\sin(\frac{\abs{\beta}}{2}).\\
+	\frac{\gamma}{\abs{\gamma}} \sin(\frac{\abs{\gamma}}{2}) &= \frac{\alpha}{\abs{\alpha}} \sin(\frac{\abs{\alpha}}{2}) \cos(\frac{\abs{\beta}}{2})
+	+ \frac{\beta}{\abs{\beta}} \sin(\frac{\abs{\alpha}}{2}) \cos(\frac{\abs{\beta}}{2})\nonumber\\
+	&+ \frac{\alpha \cross \beta}{\abs{\alpha}\abs{\beta}} \sin(\frac{\alpha}{2})\sin(\frac{\abs{\beta}}{2})
+\end{align}
+\subsection{}%4.3
+\subsubsection{}
+\begin{align}
+	\left[S_3,S_1\right] &= S_3S_1 - S_1S_3,\\
+	&= \frac{\hbar^2}{\sqrt{2}}\left[
+		\begin{pmatrix}
+			0 & 1 & 0 \\
+			0 & 0 & 0 \\
+			0 & -1 & 0
+		\end{pmatrix}
+		+ \begin{pmatrix}
+			0 & 0 & 0 \\
+			-1 & 0 & 1 \\
+			0 & 0 & 0
+	\end{pmatrix}
+	\right],\\
+	&= i\hbar\epsilon_{312}S_2.
+\end{align}
+\subsubsection{}
+\begin{align}
+	\sum_{n=1}^{3} S_n^{2} &= \hbar^2 \left[
+		\frac{1}{2}\begin{pmatrix}
+			1 & 0 & 1\\
+			0 & 2 & 0\\
+			1 & 0 & 1
+		\end{pmatrix}
+		+ \frac{1}{2}\begin{pmatrix}
+			1 & 0 & -1\\
+			0 & 2 & 0 \\
+			-1 & 0 & 1
+		\end{pmatrix}
+		+ \begin{pmatrix}
+			1 & 0 & 0\\
+			0 & 0 & 0\\
+			0 & 0 & 1
+		\end{pmatrix}
+	\right],\\
+	&= 2\hbar^2 \hat{1}.
+\end{align}
+\subsection{}%4.4
+This is just a rotation of the $\hat{x}$ operator about the $\vu{z}$ axis:
+\begin{align}
+	\hat{x}(\phi) &= e^{i\hat{L}_3\phi/2}\hat{x}e^{-i\hat{L}_3\phi/2},\\
+	&= \hat{x}\cos\phi+\hat{y}\sin\phi.
+\end{align}
+\subsection{}%4.5
+\begin{equation}
+	A = \begin{pmatrix}
+		 1 & 2 & 3 & 4 & 5 & 6 \\
+		 2 & 3 & 1 & 5 & 6 & 4 \\
+		 3 & 1 & 2 & 6 & 4 & 5 \\
+		 4 & 6 & 5 & 1 & 3 & 2 \\
+		 5 & 4 & 6 & 2 & 1 & 3 \\
+		 6 & 5 & 4 & 3 & 2 & 1 \\
+	\end{pmatrix}
+\end{equation}
+
+
+
+
+% \nocite{*}
+% \printbibliography[title={References},heading=bibnumbered]
+
+
+% \end{multicols*}
+\end{document}
