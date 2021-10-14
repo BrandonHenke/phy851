@@ -19,14 +19,64 @@
 \setcounter{section}{2}
 \setcounter{subsection}{12}
 \subsection{}%2.13
+\subsubsection{}
+\begin{align}
+	a(t) &= U^\dagger(t) a U(t),\\
+	\dv{a}{t} &= \frac{i}{\hbar} U^\dagger(t) \comm{H(t)}{a}U(t),\\
+	&= -i\omega U^\dagger(t) a U(t),\\
+	&= -i\omega a(t).\\
+	a(t) &= a_0 e^{-i\omega t},\\
+	a^\dagger(t) &= a_0^\dagger e^{i\omega t}.
+\end{align}
+\subsubsection{}
+\begin{align}
+	\comm{a(t)}{a^\dagger(t')} &= e^{i\omega(t'-t)}(a_0a_0^\dagger - a_0^\dagger a_0),\\
+	&= e^{i\omega(t'-t)} \comm{a_0}{a_0^\dagger},\\
+	&= e^{i\omega(t'-t)}.
+\end{align}
 \subsection{}%2.14
+\begin{align}
+	\ev{\hat{x}(t)\hat{x}(t')}{0} &= \frac{\hbar}{2m\omega} \ev{(a(t)+a^\dagger(t))(a(t)+a^\dagger(t))}{0},\\
+	&= \frac{\hbar}{2m\omega} \ev{a(t)a^\dagger(t)}{0},\\
+	&= \frac{\hbar}{2m\omega} e^{i\omega(t'-t)}.
+\end{align}
 \subsection{}%2.15
-
+\begin{align}
+	\mel{\vb{r}}{\frac{1}{\abs{\hat{p}}}}{\vb{r}'}
+	&= \int \frac{\dd[3]{q'}\dd[3]{q}}{(2\pi)^6} \ip{\vb{r}}{\vb{q}}\mel{\vb{q}}{\frac{1}{\hat{p}}}{\vb{q}'}\ip{\vb{q}'}{\vb{r}'},\\
+	&= \int \frac{\dd[3]{q}\dd[3]{q'}}{(2\pi)^3} e^{\frac{i}{\hbar}(\vb{r}\vdot\vb{q}-\vb{r}'\vdot\vb{q}')} \frac{1}{\hbar\abs{q'}}\delta^3(q-q'),\\
+	&= -\frac{1}{2\pi^2 \hbar \abs{r-r'}^2}.
+\end{align}
 
 \setcounter{section}{3}
 \setcounter{subsection}{0}
 \subsection{}%3.1
+Let $\Lambda$ be such that $\div{\vb{A}} = 0$.
+\begin{align}
+	\pdv{\rho}{t} &= \left(\pdv{t} \psi^* \psi + \psi^* \pdv{t}\psi \right),\\
+	&= \frac{i}{\hbar} \left(-H\psi^*\psi + \psi^* H \psi\right),\\
+	&= \frac{i}{2m\hbar} \left( -\hbar^2\laplacian{\psi^*}\psi + \hbar^2\psi^*\laplacian{\psi}
+	+ \frac{i\hbar e}{c}\vb{A}\vdot\grad{\psi^*}\psi
+	+ \frac{i\hbar e}{c}\psi^* \vb{A}\vdot\grad{\psi} \right),\\
+	&= \frac{i\hbar}{2m}\left( \psi^*\laplacian{\psi} - \laplacian{\psi^*}\psi \right)
+	+ \frac{e}{mc} \vb{A} \vdot \left( \grad{\psi^*} \psi + \psi^*\grad{\psi}\right).\label{eq: pdv rho}\\
+	\div{\vb{j}} &= \div(\psi^*\grad{\psi}-\grad{\psi^*}\psi) - \frac{e}{mc} \div(\vb{A}\rho),\\
+	&= \frac{i\hbar}{2m} \left(\psi^*\laplacian{\psi}-\laplacian{\psi^*}\psi\right)-\frac{e}{mc} \vb{A} \vdot \left(\grad{\psi^*}\psi+\psi^*\grad{\psi}\right).\label{eq: div j}
+\end{align}
+Since \ref{eq: pdv rho} and \ref{eq: div j} are negatives of each other, the continuity equation holds.
+
 \subsection{}%3.2
+\subsubsection{}
+\begin{align}
+	\vb{E} &= -\grad{\Phi} - \pdv{\vb{A}}{t},\\
+	&= -\frac{1}{c}\pdv{t}\grad{\Lambda} + \frac{1}{c}\pdv{t}\grad{\Lambda},\\
+	&= 0.\\
+	B &= \grad{}\wedge \vb{A},\\
+	&= -\grad\wedge\grad{\Lambda},\\
+	&= 0.
+\end{align}
+\subsubsection{}
+
 \subsection{}%3.3
 \subsection{}%3.4
 
