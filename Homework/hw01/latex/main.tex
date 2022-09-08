@@ -1,230 +1,130 @@
-\documentclass[a4paper,12pt,twoside]{article}
+\documentclass[
+a4paper,
+10pt,
+twoside,
+% prd,
+% aps,
+% nofootinbib,
+% superscriptaddress,
+% floatfix,
+% preprintnumbers,
+]{article}
+
+% MUST BE RUN WITH LUALATEX
 
 \usepackage{preamble}
+\usepackage{titleinfo}
 
-\title{Homework 01}
-\author{Brandon Henke\\PHY851\\Scott Pratt}
-\date{September 9, 2021}
+\geometry{ % Set document margins
+	top			= 1cm,
+	bottom	= 2cm,
+	left		= 1cm,
+	right		= 1cm
+}
 
-\setcounter{section}{1}
+\newcommand{\mcols}{2} % Choose number of columns (>= 1)
 
+
+\bibSetup{refs.bib} % Give references file 
+% ===== Format headers & footers =====
+
+\pagestyle{fancy}
+\fancyhf{}
 \fancyhead[LE,RO]{B. Henke}
-\fancyhead[RE,LO]{\thepage}
+\fancyhead[LO]{\headertitle\hspace{0.5cm}\textit{QCNP}}
+\fancyhead[RE]{\textit{QCNP}\hspace{0.5cm}\headertitle}
+\fancyfoot[RE,LO]{\thepage}
 
 \begin{document}
-%\tableofcontents
-
+% \tableofcontents
+\titleinf
 \maketitle
-% \begin{multicols*}{2}
+\startmcols
 
+\section{The Bohr Atom}
+\subsection{}%A
+\begin{align}
+	m\ddot{r} = f = -\frac{k e^2}{r^2} &= -\frac{n\tilde{h}}{r^2}\dot{r},\\
+	\Aboxed{\dot{r}_n &= \frac{k e^2}{n\tilde{h}}.}\\
+	\Aboxed{r_n &= \frac{n^2 \tilde{h}^2}{k e^2 m}.}\\
+	E_n &= \frac{1}{2} m \dot{r}_n^2 - \frac{k e^2}{r_n},\\
+	\Aboxed{&= -\frac{mk^2e^4}{2n^2\tilde{h}^2}.}\\
+	\nu &= \frac{E_n-E_{n'}}{h},\\
+	\Aboxed{&= \frac{(n')^2-n^2}{(nn')^2} \frac{mk^2e^4}{2h\tilde{h}}.}
+\end{align}
+\subsection{}%B
+For $n\gg 1$ and $n' = n-1$:
+\begin{align}
+	\nu = \frac{\dot{r}}{2\pi r} = \frac{k^2 e^4 m}{2\pi (n\tilde{h})^3} &\approx \frac{2 k^2 e^4 m}{2 n^3\tilde{h}^2},\\
+	\Aboxed{\tilde{h} = \frac{h}{2\pi}.}
+\end{align}
 
-\subsection{}%1
-\subsubsection*{a}
+\section{Simple Wave Function Problem}
+\subsection{}%A
 \begin{align}
-	R(\phi) &= \begin{pmatrix}
-		cos(\phi) & -\sin(\phi)\\
-		\sin(\phi) & \cos(\phi)
-	\end{pmatrix},
-	\label{eq: rotationMat}\\
-	R\left(\frac{\pi}{4}\right) &= \frac{1}{\sqrt{2}}\begin{pmatrix}
-		1 & 1 \\ -1 & 1
-	\end{pmatrix}.
+	1 &= A^2 \int_0^\infty e^{-2x/\lambda} \dd{x},\\
+	&= A^2 \frac{\lambda}{2},\\
+	\Aboxed{A &= \sqrt{\frac{2}{\lambda}}.}
 \end{align}
-\subsubsection*{b}
-See equation (\ref{eq: rotationMat}).
-\subsubsection*{c}
-Right circularly polarized light is given by
+\subsection{}%B
+\begin{align}
+	P(\in[0,\lambda])&= \frac{2}{\lambda} \int_0^\lambda e^{-2x/\lambda} \dd{x},\\
+	\Aboxed{&=1-\frac{1}{e^2}.}
+\end{align}
+\section{Wave Mechanics Problem}
+\subsection{}%A
+\begin{align}
+	-\frac{\hbar}{2m}\laplacian{\psi} &= E\psi,\\
+	\therefore \psi_n(x) &= A_n\cos(\alpha_n x) + B_n \sin(\alpha_n x).\\
+	&\qquad \left(\alpha_n = \sqrt{\frac{2E_nm}{\hbar}}\right)\\
+	\psi(0) = \psi(L) &= 0,\\
+	\therefore A_n &= 0,\\
+	E_n &= \frac{n^2\pi^2\hbar}{2mL^2}.\\
+	1 &= \int_0^L B_n^2\sin[2](\alpha x) \dd{x},\\
+	&= \frac{B_n^2}{2}\left(L\right),\\
+	B_n &= \sqrt{\frac{2}{L}}.\\
+	\Aboxed{\therefore \psi_n(x) &= \sqrt{\frac{2}{L}}\sin(\alpha x). \quad \left(\alpha_n = \sqrt{\frac{2E_nm}{\hbar}}\right)}
+\end{align}
+\subsection{}%B
+\begin{align}
+	1 &= \int_0^L N^2x^2(L-x)^2 \dd{x},\\
+	\rightarrow N &= \sqrt{\frac{30}{L^5}}.\\
+	P(E = E_1) &= \int_0^L \sqrt{\frac{60}{L^6}}x(L-x)\sin(\frac{\pi x}{L}) \dd{x},\\
+	\Aboxed{P(E = E_1) &= \frac{8\sqrt{15}}{\pi^3}.}
+\end{align}
+
+\section{Eigenvalues and Eigenvectors}
 \begin{equation}
-	\ket{R} = \frac{1}{\sqrt{2}}\left( \ket{x}+i\ket{y} \right).
-\end{equation}
-\begin{equation}
-	\phi(z,t) = \frac{1}{\sqrt{2}}e^{-i\omega t}\begin{pmatrix}
-	e^{i k_x z} \\ e^{i k_y z}
-	\end{pmatrix}.
-\end{equation}
-Thus,
-\begin{equation}
-	\ket{\psi} = \frac{1}{\sqrt{2}} \left( \ket{x} - i e^{i(k_x-k_y)Z}\ket{y} \right).
-\end{equation}
-\subsubsection*{d}
-\begin{align}
-	\rho_{\ket{R}} &= \op{R},\\
-	&= \frac{1}{2} \left( \ket{x} + i\ket{y} \right)\left( \bra{x} - i\bra{y} \right),\\
-	&= \frac{1}{2} \left( \hat{1} + \sigma_2 \right).
-\end{align}
-\subsubsection*{e}
-\begin{equation}
-	\rho_\psi = \frac{1}{2} \op{x} + \frac{1}{2} \op{y}.
-\end{equation}
-\subsection{}%2
-\begin{align}
-	\ev{R(\theta)}{x} &= \ev{(\cos\theta-i\sin\theta)}{x},\\
-	&= \cos\theta - i\sin\theta\ev{\sigma_2}{x},\\
-	&= \cos\theta.
-\end{align}
-\begin{align}
-	\ev{R\left(\frac{\pi}{2}\right)}{x} &= 0,\\
-	\ev{R\left(\pi\right)}{x} &= -1,\\
-	\ev{R\left(2\pi\right)}{x} &= 1.
-\end{align}
-\subsection{}%3
-\begin{align}
-	&\ev{R_y(\theta)}{z,+}\\ &= \ev{\left(\cos\frac{\theta}{2}+i\sin\frac{\theta}{2}\right)}{z,+},\\
-	&= \cos\frac{\theta}{2} + i\sin\frac{\theta}{2}\ev{\sigma_2}{z,+},\\
-	&= \cos\frac{\theta}{2}.
-\end{align}
-\begin{align}
-	\ev{R_y\left(\frac{\pi}{2}\right)}{z,+} &= \frac{1}{\sqrt{2}},\\
-	\ev{R_y\left(\pi\right)}{z,+} &= 0,\\
-	\ev{R_y\left(2\pi\right)}{z,+} &= -1.
-\end{align}
-\subsection{}%4
-Let $U$ bet a unitary transformation.
-Then
-\[
-	UU^\dagger = U^\dagger U = \hat{1}.
-\]
-Hence,
-\[
-	U^\dagger \hat{1} U = U^\dagger U \hat{1} = \mathbb{11} = \hat{1}.
-\]
-\subsection{}%5
-\begin{equation}
-	U^\dagger = \frac{1}{\sqrt{2}} (\hat{1}+i\sigma_3).
-\end{equation}
-\subsubsection*{a}
-\begin{align}
-	U\sigma_1U^\dagger &= \frac{1}{2}(\hat{1}-i\sigma_3)\sigma_1(\hat{1}+i\sigma_3),\\
-	&= \frac{1}{2}(\sigma_1 - i\sigma_3\sigma_1)(\hat{1}+i\sigma_3),\\
-	&= \frac{1}{2}(\sigma_1+i[\sigma_1,\sigma_3] - \sigma_1),\\
-	&= \frac{1}{2} i (-2i\sigma_2),\\
-	&= \sigma_2.
-\end{align}
-\subsubsection*{b}
-\begin{align}
-	U\ket{x,+} &= \frac{1}{2}(\hat{1}+i\sigma_3)(\ket{\uparrow}+\ket{\downarrow}),\\
-	&= \frac{1}{2}(\ket{\uparrow}+\ket{\downarrow}-i\ket{\uparrow}+i\ket{\downarrow}),\\
-	&= \frac{1}{\sqrt{2}}(\ket{\uparrow}+i\ket{\downarrow}).
-	\label{eq: y eigenvec}
-\end{align}
-This expression (\ref{eq: y eigenvec}) is an eigenstate of $\sigma_2$.
-\subsection{}%6
-\begin{equation}
-	U^\dagger = v_i^{(j)}.
-\end{equation}
-\subsubsection*{a}
-\begin{align}
-	UU^\dagger &= v_j^{*(i)}v_i^{(j)},\\
-	&= \left\{\begin{array}{lr}
-		1, & i=j \\
-		0, & i\neq j
-	\end{array}\right.,\\
-	&= \hat{1}.
-\end{align}
-\subsubsection*{b}
-\begin{align}
-	U_{ij} v_i^{(n)} &= v_j^{*(i)}v_i^{(n)},\\
-	&= \delta_{nj}\qq{(ortho.)}\\
-	K' = UKU^\dagger:&\\
-	K'U v^{(n)} &= UKU^\dagger U v^{(n)},\\
-	&= UK v^{(n)},\\
-	&= \lambda_n \left(Uv^{(n)}\right).
-\end{align}
-\subsection{}%7
-\begin{equation}
-	M = \begin{pmatrix}
-	 1 & 0 & 0 \\
-	 0 & 0 & 1 \\
-	 0 & 1 & 0 \\
+	A = \begin{pmatrix}
+		0 & a & 0\\
+		a & 0 & a\\
+		0 & a & 0
 	\end{pmatrix}.
 \end{equation}
-\subsubsection*{a}
 \begin{align}
-	\left| \begin{matrix}
-	 \lambda-1 & 0 & 0 \\
-	 0 & \lambda & -1 \\
-	 0 & -1 & \lambda
-	\end{matrix}\right|\!\!\!\!\!\!\!\!\!\!\!\!&\nonumber\\
-	&= (\lambda-1)(\lambda^2-1) = 0,\\
-	\lambda &= 1,\pm i.
+	det(\lambda\mathbb{1}-A) = 0 &= \lambda(\lambda^2-2a^2),\\
+	\Aboxed{\lambda &\in \{ 0,\pm\sqrt{2}\}.}
 \end{align}
-\subsubsection*{b}
 \begin{align}
+	(\lambda\mathbb{1}-A)(v) &= \vb{0} =
 	\begin{pmatrix}
-	 \lambda-1 & 0 & 0 \\
-	 0 & \lambda & -1 \\
-	 0 & -1 & \lambda
-	\end{pmatrix}&
-	\begin{pmatrix}
-		a \\ b \\ c
-	\end{pmatrix}
-	= \begin{pmatrix}
-		0 \\ 0 \\ 0
-	\end{pmatrix}.\\
-	a &= 0,\\
-	c &= b\lambda.\\
-	v_1 &= \frac{1}{\sqrt{2}}\begin{pmatrix}
-		0 \\ 1 \\ 1
-	\end{pmatrix},\\
-	v_i &= \frac{1}{\sqrt{2}}\begin{pmatrix}
-		0 \\ 1 \\ i
-	\end{pmatrix},\\
-	v_{-i} &= \frac{1}{\sqrt{2}}\begin{pmatrix}
-		0 \\ 1 \\ -i
-	\end{pmatrix}.
-\end{align}
-\subsection{}%8
-\begin{equation}
-	K = \begin{pmatrix}
-		A & C^* \\
-		C & B
-	\end{pmatrix}.
-\end{equation}
-\subsubsection*{a}
-\begin{align}
-	& (\lambda - A)(\lambda-B)-C^*C = 0,\\
-	& \lambda_\pm = \frac{A+B \pm \sqrt{(A^2-B^2)+4C^*C}}{2}.
-\end{align}
-\subsubsection*{b}
-\begin{align}
-	\begin{pmatrix}
-		\lambda-A & -C^* \\
-		-C & \lambda-B
-	\end{pmatrix}
-	& \begin{pmatrix}
-		a \\ b
-	\end{pmatrix}
-	= \begin{pmatrix}
-		0 \\ 0
-	\end{pmatrix},\\
-	a(\lambda-A) - bC^* &= 0,\\
-	-aC+b(\lambda-B) &=0,\\
-	a &= b \sqrt{\frac{C^*(\lambda-B)}{C(\lambda-A)}},
-\end{align}
-\begin{equation}
-	v_\pm = \frac{1}{\sqrt{\frac{C^*(\lambda-B)}{C(\lambda-A}-1}}\begin{pmatrix}
-		\sqrt{\frac{C^*(\lambda-B)}{C(\lambda-A}},\\
-		1
-	\end{pmatrix}
-\end{equation}
-\subsection{}%9
-\begin{equation}
-	\ket{\psi} = \frac{1}{2} (\sqrt{3} \ket{x} + \ket{y}).
-\end{equation}
-\begin{align}
-	\ev{(E-\ev{E})^2}^{1/2} &= \sqrt{Np(1-p)},\\
-	p &= \abs{\ip{x}{y}}^2 = \frac{3}{4},\\
-	\ev{(E-\ev{E})^2}^{1/2} &= \frac{\sqrt{3N}}{4}.\\
-	\ev{E} &= Np,\\
-	&= \frac{3N}{4}.\\
-	N &= \frac{10\mathrm{J}}{h\nu} \approx 3.32 \cdot 10^{19},\\
-	\frac{\ev{(E-\ev{E})^2}^{1/2}}{\ev{E}} &= \frac{1}{\sqrt{3N}},\\
-	&\approx 1.00 \cdot 10^{-10}\mathrm{J^{-1/2}}.
+		\lambda & -a & 0\\
+		-a & \lambda & -a\\
+		0 & -a & \lambda
+	\end{pmatrix}\begin{pmatrix}
+		v^1 \\ v^2 \\ v^3
+	\end{pmatrix} \\
+	v^1 + v^3 &= \frac{\lambda}{2} v^2,\\
+	\text{or} \quad v^2 &= \frac{\lambda}{2} v^1 = \frac{\lambda}{2} v^3\\
+	\Aboxed{v &\in \left\{
+	\frac{1}{\sqrt{2}}\begin{pmatrix}1\\ 0\\ -1\end{pmatrix},
+	\frac{1}{2}\begin{pmatrix}1 \\ \pm\sqrt{2} \\ 1\end{pmatrix}
+	\right\}}
 \end{align}
 
-% \nocite{*}
-% \printbibliography[title={References},heading=bibnumbered]
+\printbib
 
 
-% \end{multicols*}
+\stopmcols
+
 \end{document}
