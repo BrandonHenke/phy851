@@ -1,0 +1,62 @@
+\documentclass[
+a4paper,
+10pt,
+twoside,
+% prd,
+% aps,
+% nofootinbib,
+% superscriptaddress,
+% floatfix,
+% preprintnumbers,
+]{article}
+
+% MUST BE RUN WITH LUALATEX
+
+\usepackage{preamble}
+\usepackage{titleinfo}
+
+\geometry{ % Set document margins
+	top			= 2cm,
+	bottom	= 2cm,
+	left		= 1cm,
+	right		= 1cm
+}
+
+\newcommand{\mcols}{2} % Choose number of columns (>= 1)
+
+
+\bibSetup{refs.bib} % Give references file 
+% ===== Format headers & footers =====
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{B. Henke}
+\fancyhead[LO]{\headertitle\hspace{0.5cm}}
+\fancyhead[RE]{\hspace{0.5cm}\headertitle}
+\fancyfoot[RE,LO]{\thepage}
+
+\begin{document}
+% \tableofcontents
+\titleinf
+\maketitle
+\startmcols
+
+\section{Sakurai 1.5}
+It's a rotation, of course it's invariant.
+\begin{align}
+	a_1' &= a_1\cos\phi + a_2\sin\phi.\\
+	a_2' &= a_2\cos\phi - a_1\sin\phi.\\
+	a_3' &= a_3.
+\end{align}
+This is a rotation of the vector $a = a^k\sigma_k$ through an angle of $\phi$ in the $xy$ plane ($\sigma_1\sigma_2$ plane).
+\section{Sakurai 1.14}
+\section{Sakurai 1.15}
+\section{Sakurai 1.21}
+\section{Sakurai 1.25}
+
+\printbib
+
+
+\stopmcols
+
+\end{document}
