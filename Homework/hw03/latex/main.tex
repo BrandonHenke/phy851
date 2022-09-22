@@ -42,17 +42,152 @@ twoside,
 \startmcols
 
 \section{Sakurai 1.5}
-It's a rotation, of course it's invariant.
+
+It's a rotation, of course it's invariant:
 \begin{align}
-	a_1' &= a_1\cos\phi + a_2\sin\phi.\\
-	a_2' &= a_2\cos\phi - a_1\sin\phi.\\
-	a_3' &= a_3.
+	\det(ABC) &= \det(A)\det(B)\det(C),\\
+	\therefore &\det(e^{i n \phi/2}a^k\sigma_k e^{-i n \phi/2})\\
+	&= \det(e^{i n^k\sigma_k \phi/2})\det(a^k\sigma_k)\det(e^{-i n^k\sigma_k \phi/2}),\\
+	&= e^{\tr(i n^k\sigma_k \phi/2)} \cdot \det(a^k \sigma_k) \cdot e^{\tr(-i n^k\sigma_k \phi/2)},\\
+	&= \det(a^k \sigma_k).
+\end{align}
+\begin{align}
+	a' &= a^k e^{i \sigma_3 \phi/2} \sigma_k e^{-i \sigma_3 \phi/2},\\
+	&= a^k \left(\cos\frac{\phi}{2} + i\sigma_3 \sin\frac{\phi}{2}\right) \left(\sigma_k\cos\frac{\phi}{2} - i\sigma_k\sigma_3 \sin\frac{\phi}{2}\right),\\
+	&= a^k \left(\sigma_k\cos^2\frac{\phi}{2} + i[\sigma_3,\sigma_k] \sin\frac{\phi}{2}\cos\frac{\phi}{2}\right.\\
+	&\qquad+ \left. \sigma_3\sigma_k\sigma_3 \sin^2 \frac{\phi}{2} \right).
+\end{align}
+If $k = 3$, $\commutator{\sigma_3}{\sigma_k} = 0$, and $\sigma_3^3 = \sigma_3$.
+Thus,
+\begin{align}
+	a' &= a^1 \left(\sigma_1\cos^2\frac{\phi}{2} + i[\sigma_3,\sigma_1] \sin\frac{\phi}{2}\cos\frac{\phi}{2}\right.\nonumber\\
+	&\qquad+ \left. \sigma_3\sigma_1\sigma_3 \sin^2 \frac{\phi}{2} \right)\nonumber\\
+	&\quad+ a^2 \left(\sigma_2\cos^2\frac{\phi}{2} + i[\sigma_3,\sigma_2] \sin\frac{\phi}{2}\cos\frac{\phi}{2}\right.\nonumber\\
+	&\qquad+ \left. \sigma_3\sigma_2\sigma_3 \sin^2 \frac{\phi}{2} \right)\nonumber\\
+	&\quad+ a^3\sigma_3,\\
+	%
+	&= a^1 \left(\sigma_1\cos^2\frac{\phi}{2} - \sigma_2 \sin\phi - \sigma_1 \sin^2 \frac{\phi}{2} \right)\nonumber\\
+	&\quad+ a^2 \left(\sigma_2\cos^2\frac{\phi}{2} + \sigma_1 \sin\phi - \sigma_2 \sin^2 \frac{\phi}{2} \right)\nonumber\\
+	&\quad+ a^3\sigma_3,\\
+	&= a^1 \left(\sigma_1\cos\phi - \sigma_2 \sin\phi\right)\nonumber\\
+	&\quad+ a^2 \left(\sigma_2\cos\phi + \sigma_1 \sin\phi\right)\nonumber\\
+	&\quad+ a^3\sigma_3,\\
+	&= (a^1\cos\phi + a^2 \sin\phi)\sigma_1 \nonumber\\
+	&\quad+ (-a^1\sin\phi + a^2\cos\phi) \sigma_2 \nonumber\\
+	&\quad+ a^3\sigma_3.
+\end{align}
+\begin{align}
+	a'^1 &= a^1\cos\phi + a^2 \sin\phi.\\
+	a'^2 &= -a^1\sin\phi + a^2\cos\phi.\\
+	a'^3 &= a^3.
 \end{align}
 This is a rotation of the vector $a = a^k\sigma_k$ through an angle of $\phi$ in the $xy$ plane ($\sigma_1\sigma_2$ plane).
 \section{Sakurai 1.14}
+\subsection{} %A
+\begin{align}
+	\abs{\ip{S_x;+}{\psi}}^2 &= \abs{\frac{1}{\sqrt{2}}\left(\bra{+}+\bra{-}\right) \left( \cos\frac{\gamma}{2}\ket{+} \pm \sin\frac{\gamma}{2} \ket{-} \right)}^2,\\
+	&= \frac{1}{2}\left(\cos\frac{\gamma}{2} \pm \sin\frac{\gamma}{2}\right)^2,\\
+	&= \frac{1}{2}\left(1 \pm \sin\gamma \right).
+\end{align}
+
+\subsection{} %B
+\begin{align}
+	\ev{(S_x-\ev{S_x})^2} &= \ev{S_x^2} - \ev{S_x}^2.\\
+	\ev{S_x^2} &= \frac{\hbar^2}{4} \left(\cos^2\frac{\gamma}{2} + \sin^2 \frac{\gamma}{2}\right),\\
+	&= \frac{\hbar^2}{4}.\\
+	\ev{S_x}^2 &= \frac{\hbar^2}{4} 4\sin^2\frac{\gamma}{2}\cos^2\frac{\gamma}{2},\\
+	&= \frac{\hbar^2}{4} \sin^2 \gamma.\\
+	\ev{S_x^2} - \ev{S_x}^2 &= \frac{\hbar^2}{4} \cos^2 \gamma.
+\end{align}
+
 \section{Sakurai 1.15}
+This is the same as polarization of photons, but with twice the angle:
+the intensity of the final $s_z = -\hbar/2$ beam is $I(\beta) = \sin[2](\beta)/4$.
+
+The intensity of the final $s_z = -\hbar/2$ beam is maximized when the second device is measuring anywhere in the $xy$-plan: $\beta = \pi/2$.
+
 \section{Sakurai 1.21}
+\subsection{} %A
+\begin{align}
+	\ev{S_x^2} - \ev{S_x}^2 &= \frac{\hbar^2}{4} - 0,\\
+	&= \frac{\hbar^2}{4}.
+	\ev{S_y^2} - \ev{S_y}^2 &= \frac{\hbar^2}{4}.\\
+	\frac{1}{4} \abs{\ev{\commutator{S_x}{S_y}}}^2 &= \frac{\hbar^4}{16}.\\
+	\ev{(\Delta S_x)^2}\ev{(\Delta S_y)^2} &\geq \frac{1}{4} \abs{\ev{\commutator{S_x}{S_y}}}^2,\\
+	\frac{\hbar^4}{16} &\geq \frac{\hbar^4}{16}. \qquad \cmark
+\end{align}
+\subsection{} %B
+\begin{align}
+	\ev{S_x^2} - \ev{S_x}^2 &= \frac{\hbar^2}{4} - \frac{\hbar^2}{4},\\
+	&= 0.\\
+	\frac{1}{4} \abs{\ev{\commutator{S_x}{S_y}}}^2 &= 0.\\
+	\ev{(\Delta S_x)^2}\ev{(\Delta S_y)^2} &\geq \frac{1}{4} \abs{\ev{\commutator{S_x}{S_y}}}^2,\\
+	0 &\geq 0. \qquad \cmark
+\end{align}
+
 \section{Sakurai 1.25}
+\subsection{} %A
+The operator, $B$, exhibits a degenerate spectrum (repeated eigenvalues):
+\begin{align}
+	\det(\lambda-B) = 0 &= (\lambda-b)(\lambda^2-b^2),\\
+	\lambda &\in \left\{ b,b,-b \right\}.
+\end{align}
+
+\subsection{} %B
+\begin{align}
+	AB &= \begin{pmatrix}
+		a & 0 & 0 \\
+		0 & -a & 0 \\
+		0 & 0 & -a 
+	\end{pmatrix}\begin{pmatrix}
+		b & 0 & 0 \\
+		0 & 0 & -ib \\
+		0 & ib & 0 
+	\end{pmatrix},\\
+	&= \begin{pmatrix}
+		ab & 0 & 0 \\
+		0 & 0 & iab \\
+		0 & -iab & 0 
+	\end{pmatrix},\\
+	&= \begin{pmatrix}
+		b & 0 & 0 \\
+		0 & 0 & -ib \\
+		0 & ib & 0 
+	\end{pmatrix}\begin{pmatrix}
+		a & 0 & 0 \\
+		0 & -a & 0 \\
+		0 & 0 & -a 
+	\end{pmatrix},\\
+	&= BA.
+\end{align}
+\subsection{} %C
+The eigenvalues of $AB$ are $\lambda_{ab} \in \left\{ ab,ab, -ab\right\}$.
+\begin{align}
+	\begin{pmatrix}
+		ab & 0 & 0 \\
+		0 & 0 & iab \\
+		0 & -iab & 0 
+	\end{pmatrix}\begin{pmatrix}
+		v^1 \\ v^2 \\ v^3
+	\end{pmatrix} &= \lambda_{ab}\begin{pmatrix}
+		v^1 \\ v^2 \\ v^3
+	\end{pmatrix},\\
+	ab v^1 &= \lambda_{ab} v^1,\\
+	iab v^3 &= \lambda_{ab} v^2,\\
+	-iab v^2 &= \lambda_{ab} v^3.\\
+	\rightarrow v&\in \left\{
+		\begin{pmatrix}
+			1 \\ 0 \\ 0
+		\end{pmatrix},
+		\frac{1}{\sqrt{2}}\begin{pmatrix}
+			0 \\ i \\ 1
+		\end{pmatrix},
+		\frac{1}{\sqrt{2}}\begin{pmatrix}
+			0 \\ -i \\ 1
+		\end{pmatrix}
+	\right\}.
+\end{align}
+The respective eigenvalues are given above.
 
 \printbib
 
