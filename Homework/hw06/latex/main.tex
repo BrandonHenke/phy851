@@ -1,0 +1,71 @@
+\documentclass[
+a4paper,
+10pt,
+twoside,
+% prd,
+% aps,
+% nofootinbib,
+% superscriptaddress,
+% floatfix,
+% preprintnumbers,
+]{article}
+
+% MUST BE RUN WITH LUALATEX
+
+\usepackage{preamble}
+\usepackage{titleinfo}
+
+\geometry{ % Set document margins
+	top			= 2cm,
+	bottom	= 2cm,
+	left		= 1cm,
+	right		= 1cm
+}
+
+\newcommand{\mcols}{2} % Choose number of columns (>= 1)
+
+
+\bibSetup{refs.bib} % Give references file 
+% ===== Format headers & footers =====
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[LE,RO]{B. Henke}
+\fancyhead[LO]{\headertitle\hspace{0.5cm}}
+\fancyhead[RE]{\hspace{0.5cm}\headertitle}
+\fancyfoot[RE,LO]{\thepage}
+
+\begin{document}
+% \tableofcontents
+\titleinf
+\maketitle
+\startmcols
+
+\section{Time-dependence of Spin Operators in Heisenberg Picture}
+\subsection{} %A
+\subsection{} %B
+\subsection{} %C
+
+\section{Quantum Virial Theorem}
+\subsection{} %A
+\subsection{} %B
+\subsection{} %C
+
+\section{Sakurai 2.17: Simple Harmonic Oscillator in Momentum Space}
+\subsection{} %A
+\subsection{} %B
+\subsection{} %C
+
+\section{Uncertainty Relation for Eigenstates of the Simple Harmonic Oscillator}
+
+\section{Time-dependence of Simple Harmonic Oscillator States}
+\subsection{} %A
+\subsection{} %B
+\subsection{} %C
+
+\printbib
+
+
+\stopmcols
+
+\end{document}
